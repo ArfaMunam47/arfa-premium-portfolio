@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Arfa Munam — Frontend Developer, Prompt Engineer & AI Enthusiast">
+<title>Arfa Munam — Portfolio</title>
+
+<!-- Favicon: circular crop of Arfa's photo, multiple sizes for crisp small-size rendering -->
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="shortcut icon" href="favicon-32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-blur"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#achievements" onclick="closeMobile()">Achievements</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a class="nav-resume js-resume-link" href="Arfa-Munam-Resume.pdf" download="Arfa-Munam-Resume.pdf">⬇ Download CV</a>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon" aria-label="AM Logo">
+      <svg viewBox="0 0 36 36" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#D4AF37"/>
+            <stop offset="100%" style="stop-color:#B8860B"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#415A77"/>
+            <stop offset="100%" style="stop-color:#F7F3E9"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="1.2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="none" stroke="url(#lg1)" stroke-width="1.2" opacity="0.6">
+          <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="12s" repeatCount="indefinite"/>
+        </polygon>
+        <rect x="10" y="10" width="16" height="16" rx="3" fill="url(#lg1)" opacity="0.85" filter="url(#glow)">
+          <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="-360 18 18" dur="8s" repeatCount="indefinite"/>
+        </rect>
+        <polygon points="18,11 25,18 18,25 11,18" fill="url(#lg2)" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2.5s" repeatCount="indefinite"/>
+        </polygon>
+        <circle cx="18" cy="18" r="3" fill="#0D1B2A" opacity="0.95" filter="url(#glow)">
+          <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="18" cy="5" r="1.5" fill="#F7F3E9" opacity="0.85">
+          <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Arfa Munam</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="Arfa-Munam-Resume.pdf" download="Arfa-Munam-Resume.pdf" class="nav-resume js-resume-link">⬇ CV</a>
+    <a href="mailto:arfamunam01@gmail.com" class="nav-cta">Hire Me</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+  <div class="hero-inner container">
+    <div class="hero-content reveal">
+      <div class="hero-badge"><span class="hero-badge-dot"></span> Available for opportunities</div>
+      <h1 class="hero-name">Hi, I'm<br><span>Arfa Munam</span></h1>
+      <p class="hero-titles">Frontend Developer <span>·</span> Prompt Engineer <span>·</span> AI Enthusiast</p>
+      <p class="hero-desc">I design beautiful user interfaces and leverage AI to build modern digital experiences that are elegant, fast, and user-focused.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects →</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
+        <a href="Arfa-Munam-Resume.pdf" download="Arfa-Munam-Resume.pdf" class="btn-outline js-resume-link">⬇ Resume</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="portrait-wrap">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="portrait-glow"></div>
+        <img src="main.png.png" alt="Arfa Munam" class="portrait-img">
+        <div class="float-card float-card1"><span class="card-dot"></span>Frontend Developer</div>
+        <div class="float-card float-card2">🤖 AI-Powered Workflows</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-img-card">
+          <div style="position:relative;z-index:1;">
+            <p style="font-size:0.8rem;opacity:0.8;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">CS Student → Builder</p>
+            <p style="font-size:1.6rem;font-weight:800;line-height:1.2;margin-bottom:1rem;">Crafting digital<br>experiences with<br>purpose & care</p>
+            <p style="font-size:0.88rem;opacity:0.85;line-height:1.7;">From learning HTML to building AI-assisted apps — every line of code brings me closer to the future I'm creating.</p>
+            <div class="about-stat-grid">
+              <div class="about-stat"><div class="about-stat-num">10+</div><div class="about-stat-label">Projects Built</div></div>
+              <div class="about-stat"><div class="about-stat-num">15+</div><div class="about-stat-label">Skills Learned</div></div>
+              <div class="about-stat"><div class="about-stat-num">8+</div><div class="about-stat-label">AI Tools Used</div></div>
+              <div class="about-stat"><div class="about-stat-num">∞</div><div class="about-stat-label">Curiosity</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">The Story Behind the <span class="grad">Code</span></h2>
+        <div class="section-divider"></div>
+        <p>I'm Arfa Munam, a Computer Science student who discovered that the intersection of design, development, and AI is where I belong. I build interfaces that feel alive — responsive, polished, and purposeful.</p>
+        <p>My journey started with frontend development — HTML, CSS, JavaScript — and quickly expanded into AI-assisted workflows. Today I combine both worlds to ship digital products faster and better than ever before.</p>
+        <p>I'm passionate about Prompt Engineering and exploring how tools like Claude, ChatGPT, and Bolt AI can amplify what's possible for a solo developer. I believe the future belongs to developers who understand AI as a creative partner.</p>
+        <div class="about-tag-list">
+          <span class="about-tag">🎓 CS Student</span>
+          <span class="about-tag">💻 Frontend Dev</span>
+          <span class="about-tag">🤖 AI Enthusiast</span>
+          <span class="about-tag">✨ Prompt Engineer</span>
+          <span class="about-tag">🚀 Always Learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS — each card communicates its domain through motion -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Capabilities</p>
+      <h2 class="section-title">Skills & <span class="grad">Expertise</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">A blend of frontend craftsmanship, version control discipline, and cutting-edge AI tooling.</p>
+    </div>
+    <div class="skills-grid">
+
+      <!-- Frontend: floating 3D layered browser-window stack -->
+      <div class="skill-category reveal">
+        <div class="skill-visual" aria-hidden="true">
+          <div class="browser-stack">
+            <div class="browser-layer layer3"></div>
+            <div class="browser-layer layer2"></div>
+            <div class="browser-layer layer1">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-lines"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cat-title">Frontend Development</div>
+        <div class="skill-items">
+          <span class="skill-item">HTML5</span><span class="skill-item">CSS3</span><span class="skill-item">JavaScript</span>
+          <span class="skill-item">Bootstrap</span><span class="skill-item">Responsive Design</span>
+          <span class="skill-item">Flexbox</span><span class="skill-item">CSS Grid</span><span class="skill-item">UI/UX Principles</span>
+        </div>
+      </div>
+
+      <!-- Version Control: animated commit graph with a traveling pulse -->
+      <div class="skill-category reveal">
+        <div class="skill-visual" aria-hidden="true">
+          <svg class="git-graph" viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg">
+            <path class="git-edge" d="M8,58 C8,40 28,40 28,24 C28,40 50,40 50,52 C50,40 72,40 72,14 C72,40 92,40 92,34"/>
+            <circle class="git-node n1" cx="8" cy="58" r="4"/>
+            <circle class="git-node n2" cx="28" cy="24" r="4"/>
+            <circle class="git-node n3" cx="50" cy="52" r="4"/>
+            <circle class="git-node n4" cx="72" cy="14" r="4"/>
+            <circle class="git-node n5" cx="92" cy="34" r="4"/>
+            <circle class="git-pulse" r="3"/>
+          </svg>
+        </div>
+        <div class="skill-cat-title">Version Control & Tools</div>
+        <div class="skill-items">
+          <span class="skill-item">Git</span><span class="skill-item">GitHub</span><span class="skill-item">VS Code</span>
+          <span class="skill-item">Terminal</span><span class="skill-item">Branching</span><span class="skill-item">Pull Requests</span>
+        </div>
+      </div>
+
+      <!-- AI: orbiting particles around a pulsing glowing core -->
+      <div class="skill-category reveal">
+        <div class="skill-visual" aria-hidden="true">
+          <div class="ai-core">
+            <div class="ai-orbit o3"><span class="ai-particle"></span></div>
+            <div class="ai-orbit o2"><span class="ai-particle"></span></div>
+            <div class="ai-orbit o1"><span class="ai-particle"></span></div>
+            <div class="ai-glow-core"></div>
+          </div>
+        </div>
+        <div class="skill-cat-title">AI & Productivity</div>
+        <div class="skill-items">
+          <span class="skill-item">Prompt Engineering</span><span class="skill-item">Claude</span><span class="skill-item">ChatGPT</span>
+          <span class="skill-item">Bolt AI</span><span class="skill-item">v0 by Vercel</span><span class="skill-item">Supabase</span>
+          <span class="skill-item">Webuild</span><span class="skill-item">AI Workflows</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">What I Offer</p>
+      <h2 class="section-title">Services I <span class="grad">Provide</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">From pixel-perfect interfaces to AI-powered development workflows.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card-3d reveal" data-tilt>
+        <div class="service-card-inner">
+          <div class="service-shine"></div>
+          <div class="service-num">01</div>
+          <div class="service-icon-3d">💻</div>
+          <div class="service-title">Frontend Development</div>
+          <div class="service-desc">Building responsive, accessible, and performant web interfaces using HTML, CSS, and JavaScript with modern design principles.</div>
+        </div>
+      </div>
+      <div class="service-card-3d reveal" data-tilt>
+        <div class="service-card-inner">
+          <div class="service-shine"></div>
+          <div class="service-num">02</div>
+          <div class="service-icon-3d">📱</div>
+          <div class="service-title">Responsive Web Design</div>
+          <div class="service-desc">Crafting websites that look stunning on every device — from mobile phones to ultra-wide monitors. Mobile-first by default.</div>
+        </div>
+      </div>
+      <div class="service-card-3d reveal" data-tilt>
+        <div class="service-card-inner">
+          <div class="service-shine"></div>
+          <div class="service-num">03</div>
+          <div class="service-icon-3d">🚀</div>
+          <div class="service-title">Landing Pages</div>
+          <div class="service-desc">High-converting, visually impressive landing pages designed to capture attention and drive action for startups and products.</div>
+        </div>
+      </div>
+      <div class="service-card-3d reveal" data-tilt>
+        <div class="service-card-inner">
+          <div class="service-shine"></div>
+          <div class="service-num">04</div>
+          <div class="service-icon-3d">🤖</div>
+          <div class="service-title">AI Prompt Engineering</div>
+          <div class="service-desc">Crafting precise, effective prompts for Claude, ChatGPT, and other AI systems to automate tasks and boost productivity.</div>
+        </div>
+      </div>
+      <div class="service-card-3d reveal" data-tilt>
+        <div class="service-card-inner">
+          <div class="service-shine"></div>
+          <div class="service-num">05</div>
+          <div class="service-icon-3d">🔮</div>
+          <div class="service-title">AI Workflow Consulting</div>
+          <div class="service-desc">Helping teams integrate AI tools like Bolt AI, v0, and Supabase into their development workflow for faster shipping.</div>
+        </div>
+      </div>
+      <div class="service-card-3d reveal" data-tilt>
+        <div class="service-card-inner">
+          <div class="service-shine"></div>
+          <div class="service-num">06</div>
+          <div class="service-icon-3d">🛰️</div>
+          <div class="service-title">Portfolio Websites</div>
+          <div class="service-desc">Premium portfolio websites that help developers, designers, and creatives stand out and land their dream opportunities.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="techstack">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Technologies</p>
+      <h2 class="section-title">Tech <span class="grad">Stack</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="tech-scroll-wrap reveal">
+      <div class="tech-track">
+        <div class="tech-pill">🌐 HTML5</div><div class="tech-pill">🎨 CSS3</div>
+        <div class="tech-pill">⚡ JavaScript</div><div class="tech-pill">🅱️ Bootstrap</div>
+        <div class="tech-pill">🐙 GitHub</div><div class="tech-pill">🔧 Git</div>
+        <div class="tech-pill">🤖 Claude AI</div><div class="tech-pill">💬 ChatGPT</div>
+        <div class="tech-pill">⚡ Bolt AI</div><div class="tech-pill">🔺 v0 by Vercel</div>
+        <div class="tech-pill">🟩 Supabase</div><div class="tech-pill">🏗️ Webuild</div>
+        <div class="tech-pill">📐 Responsive Design</div><div class="tech-pill">✨ Prompt Engineering</div>
+        <div class="tech-pill">🌐 HTML5</div><div class="tech-pill">🎨 CSS3</div>
+        <div class="tech-pill">⚡ JavaScript</div><div class="tech-pill">🅱️ Bootstrap</div>
+        <div class="tech-pill">🐙 GitHub</div><div class="tech-pill">🔧 Git</div>
+        <div class="tech-pill">🤖 Claude AI</div><div class="tech-pill">💬 ChatGPT</div>
+        <div class="tech-pill">⚡ Bolt AI</div><div class="tech-pill">🔺 v0 by Vercel</div>
+        <div class="tech-pill">🟩 Supabase</div><div class="tech-pill">🏗️ Webuild</div>
+        <div class="tech-pill">📐 Responsive Design</div><div class="tech-pill">✨ Prompt Engineering</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Featured <span class="grad">Projects</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Real projects built at the intersection of frontend craftsmanship and AI-assisted development.</p>
+    </div>
+    <div class="projects-grid">
+
+      <!-- FounderOS -->
+      <div class="project-card reveal">
+        <span class="project-featured">⭐ Featured</span>
+        <div class="project-thumb">
+          <div class="project-thumb-canvas" style="background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);">
+            <div class="project-thumb-overlay"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.55;" viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="360" height="180" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+              <rect x="20" y="15" width="360" height="28" rx="8" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="35" cy="29" r="4" fill="#ff5f57"/><circle cx="50" cy="29" r="4" fill="#febc2e"/><circle cx="65" cy="29" r="4" fill="#28c840"/>
+              <rect x="30" y="55" width="100" height="120" rx="6" fill="rgba(99,102,241,0.3)" stroke="rgba(99,102,241,0.5)" stroke-width="1"/>
+              <rect x="145" y="55" width="100" height="55" rx="6" fill="rgba(139,92,246,0.3)" stroke="rgba(139,92,246,0.5)" stroke-width="1"/>
+              <rect x="145" y="120" width="100" height="55" rx="6" fill="rgba(6,182,212,0.3)" stroke="rgba(6,182,212,0.5)" stroke-width="1"/>
+              <rect x="260" y="55" width="100" height="120" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <rect x="40" y="68" width="60" height="4" rx="2" fill="rgba(255,255,255,0.5)"/>
+              <rect x="40" y="78" width="40" height="3" rx="2" fill="rgba(255,255,255,0.25)"/>
+              <rect x="40" y="90" width="80" height="2" rx="1" fill="rgba(255,255,255,0.15)"/>
+              <rect x="40" y="96" width="60" height="2" rx="1" fill="rgba(255,255,255,0.1)"/>
+              <rect x="40" y="102" width="70" height="2" rx="1" fill="rgba(255,255,255,0.1)"/>
+            </svg>
+            <div class="project-thumb-icon" style="z-index:3;">🏗️</div>
+            <div class="project-thumb-name" style="z-index:3;">FounderOS</div>
+            <div class="project-thumb-tag" style="z-index:3;">3D Premium Frontend</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">FounderOS — 3D Premium Frontend</div>
+          <div class="project-desc">A futuristic 3D premium frontend experience built for founders. Features cinematic animations, glassmorphism, and an immersive product-driven UI that stands out from the crowd.</div>
+          <div class="project-tags">
+            <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span>
+            <span class="project-tag">JavaScript</span><span class="project-tag">3D</span><span class="project-tag">Glassmorphism</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ArfaMunam47/founderos-3d-premium-frontend" target="_blank" rel="noopener" class="project-btn pbtn-gh">🐙 GitHub</a>
+            <a href="https://github.com/ArfaMunam47/founderos-3d-premium-frontend" target="_blank" rel="noopener" class="project-btn pbtn-live">↗ Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- EduCampus -->
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <div class="project-thumb-canvas" style="background:linear-gradient(135deg,#134e5e,#71b280);">
+            <div class="project-thumb-overlay"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5;" viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="360" height="180" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+              <rect x="20" y="15" width="360" height="28" rx="8" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="35" cy="29" r="4" fill="#ff5f57"/><circle cx="50" cy="29" r="4" fill="#febc2e"/><circle cx="65" cy="29" r="4" fill="#28c840"/>
+              <rect x="30" y="55" width="340" height="40" rx="6" fill="rgba(255,255,255,0.08)"/>
+              <rect x="40" y="64" width="80" height="5" rx="2" fill="rgba(255,255,255,0.6)"/>
+              <rect x="40" y="74" width="120" height="3" rx="2" fill="rgba(255,255,255,0.3)"/>
+              <rect x="30" y="105" width="105" height="75" rx="6" fill="rgba(113,178,128,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="147" y="105" width="105" height="75" rx="6" fill="rgba(19,78,94,0.6)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="265" y="105" width="105" height="75" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              <rect x="40" y="118" width="50" height="4" rx="2" fill="rgba(255,255,255,0.7)"/>
+              <rect x="40" y="127" width="80" height="2.5" rx="1" fill="rgba(255,255,255,0.3)"/>
+              <rect x="40" y="133" width="65" height="2" rx="1" fill="rgba(255,255,255,0.2)"/>
+            </svg>
+            <div class="project-thumb-icon" style="z-index:3;">🎓</div>
+            <div class="project-thumb-name" style="z-index:3;">EduCampus</div>
+            <div class="project-thumb-tag" style="z-index:3;">Education Platform</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">EduCampus — Education Platform</div>
+          <div class="project-desc">A modern education platform website with a clean, professional UI. Designed for students and institutions with responsive layouts, course listings, and engaging visuals.</div>
+          <div class="project-tags">
+            <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span>
+            <span class="project-tag">JavaScript</span><span class="project-tag">Bootstrap</span><span class="project-tag">Responsive</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ArfaMunam47/EduCampus" target="_blank" rel="noopener" class="project-btn pbtn-gh">🐙 GitHub</a>
+            <a href="https://github.com/ArfaMunam47/EduCampus" target="_blank" rel="noopener" class="project-btn pbtn-live">↗ Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FoodieHub -->
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <div class="project-thumb-canvas" style="background:linear-gradient(135deg,#c94b4b,#4b134f);">
+            <div class="project-thumb-overlay"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5;" viewBox="0 0 400 210" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="15" width="360" height="180" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+              <rect x="20" y="15" width="360" height="28" rx="8" fill="rgba(255,255,255,0.08)"/>
+              <circle cx="35" cy="29" r="4" fill="#ff5f57"/><circle cx="50" cy="29" r="4" fill="#febc2e"/><circle cx="65" cy="29" r="4" fill="#28c840"/>
+              <rect x="30" y="55" width="340" height="55" rx="8" fill="rgba(201,75,75,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <rect x="44" y="65" width="100" height="6" rx="3" fill="rgba(255,255,255,0.7)"/>
+              <rect x="44" y="76" width="150" height="3.5" rx="2" fill="rgba(255,255,255,0.35)"/>
+              <rect x="44" y="84" width="60" height="14" rx="7" fill="rgba(255,255,255,0.9)"/>
+              <rect x="30" y="120" width="155" height="65" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+              <rect x="195" y="120" width="75" height="65" rx="6" fill="rgba(201,75,75,0.4)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+              <rect x="280" y="120" width="75" height="65" rx="6" fill="rgba(75,19,79,0.5)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+              <circle cx="107" cy="148" r="20" fill="rgba(255,255,255,0.15)"/>
+              <rect x="40" y="170" width="70" height="3.5" rx="2" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+            <div class="project-thumb-icon" style="z-index:3;">🍕</div>
+            <div class="project-thumb-name" style="z-index:3;">FoodieHub</div>
+            <div class="project-thumb-tag" style="z-index:3;">Food Delivery UI</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">FoodieHub — Food Delivery UI</div>
+          <div class="project-desc">A mouth-watering food delivery website UI with vibrant visuals, menu exploration, and smooth interactions. Built to make users hungry and ready to order.</div>
+          <div class="project-tags">
+            <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span>
+            <span class="project-tag">JavaScript</span><span class="project-tag">UI Design</span><span class="project-tag">Bootstrap</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ArfaMunam47/FoodieHub" target="_blank" rel="noopener" class="project-btn pbtn-gh">🐙 GitHub</a>
+            <a href="https://github.com/ArfaMunam47/FoodieHub" target="_blank" rel="noopener" class="project-btn pbtn-live">↗ Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="https://github.com/ArfaMunam47" target="_blank" rel="noopener" class="btn-secondary">View All Projects on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Journey</p>
+      <h2 class="section-title">Learning <span class="grad">Timeline</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-dot">🌱</div>
+        <div>
+          <div class="timeline-period">2022 — Start</div>
+          <div class="timeline-title">First Line of Code</div>
+          <div class="timeline-desc">Began Computer Science journey. Discovered HTML and CSS, fell in love with building things on the internet. Built my first webpage.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">⚡</div>
+        <div>
+          <div class="timeline-period">2023 — Growth</div>
+          <div class="timeline-title">Frontend Development Deep Dive</div>
+          <div class="timeline-desc">Mastered responsive design, Bootstrap, and JavaScript. Started building real projects — landing pages, portfolio sites, and interactive UIs. Learned Git and GitHub.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">🤖</div>
+        <div>
+          <div class="timeline-period">2024 — AI Era</div>
+          <div class="timeline-title">Discovering AI-Assisted Development</div>
+          <div class="timeline-desc">Discovered ChatGPT, Claude, and emerging AI dev tools. Started learning Prompt Engineering seriously. Began integrating AI into frontend workflows.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">🚀</div>
+        <div>
+          <div class="timeline-period">2025–2026 — Now</div>
+          <div class="timeline-title">Building at the Intersection</div>
+          <div class="timeline-desc">Combining frontend skills with modern AI tools — Bolt AI, v0, Supabase, Webuild. Building full digital experiences faster and better than ever.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Milestones</p>
+      <h2 class="section-title">By the <span class="grad">Numbers</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="achievements-grid">
+      <div class="achievement-card reveal"><div class="achievement-icon">🏗️</div><div class="achievement-num" data-count="10">0</div><div class="achievement-label">Projects Completed</div></div>
+      <div class="achievement-card reveal"><div class="achievement-icon">🛠️</div><div class="achievement-num" data-count="15">0</div><div class="achievement-label">Technologies Learned</div></div>
+      <div class="achievement-card reveal"><div class="achievement-icon">🤖</div><div class="achievement-num" data-count="8">0</div><div class="achievement-label">AI Tools Mastered</div></div>
+      <div class="achievement-card reveal"><div class="achievement-icon">⭐</div><div class="achievement-num" data-count="300">0</div><div class="achievement-label">Commits</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Let's <span class="grad">Work Together</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <h3>Have a project in mind?</h3>
+        <p>I'm open to freelance projects, collaboration opportunities, and exciting roles. Whether you need a frontend developer, a prompt engineer, or just want to chat about AI and code — my inbox is always open.</p>
+        <div class="contact-socials">
+          <a href="https://github.com/ArfaMunam47" target="_blank" rel="noopener" class="contact-social">
+            <span class="contact-social-icon icon-github">
+              <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.39-1.25.71-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.21.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+            </span>
+            <div><div class="contact-social-label">GitHub</div><div class="contact-social-sub">github.com/ArfaMunam47</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/arfa-munam-0b7936286" target="_blank" rel="noopener" class="contact-social">
+            <span class="contact-social-icon icon-linkedin">
+              <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </span>
+            <div><div class="contact-social-label">LinkedIn</div><div class="contact-social-sub">arfa-munam-0b7936286</div></div>
+          </a>
+          <a href="mailto:arfamunam01@gmail.com" class="contact-social">
+            <span class="contact-social-icon icon-gmail">
+              <svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm19.38 2.04-8.4 6.1a1.6 1.6 0 0 1-1.96 0l-8.4-6.1A.5.5 0 0 0 2 6.42v.02l8.95 6.5a2.6 2.6 0 0 0 3.1 0L23 6.44v-.02a.5.5 0 0 0-.62-.38z"/></svg>
+            </span>
+            <div><div class="contact-social-label">Email</div><div class="contact-social-sub">arfamunam01@gmail.com</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="form-group">
+            <label class="form-label" for="cname">Your Name</label>
+            <input type="text" class="form-input" id="cname" placeholder="Jane Smith" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cemail">Email Address</label>
+            <input type="email" class="form-input" id="cemail" placeholder="jane@company.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cmsg">Message</label>
+            <textarea class="form-textarea" id="cmsg" placeholder="Tell me about your project or opportunity..."></textarea>
+          </div>
+          <button type="button" class="send-btn" id="sendBtn">
+            <span id="sendText">Send Message</span> <span id="sendArrow">→</span>
+          </button>
+          <div id="form-msg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="footer-logo">Arfa Munam</div>
+    <a href="Arfa-Munam-Resume.pdf" download="Arfa-Munam-Resume.pdf" class="footer-resume js-resume-link">⬇ Download Resume</a>
+    <div class="footer-socials">
+      <a href="https://github.com/ArfaMunam47" target="_blank" rel="noopener" class="footer-social icon-github" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.39-1.25.71-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.21.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/arfa-munam-0b7936286" target="_blank" rel="noopener" class="footer-social icon-linkedin" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="mailto:arfamunam01@gmail.com" class="footer-social icon-gmail" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm19.38 2.04-8.4 6.1a1.6 1.6 0 0 1-1.96 0l-8.4-6.1A.5.5 0 0 0 2 6.42v.02l8.95 6.5a2.6 2.6 0 0 0 3.1 0L23 6.44v-.02a.5.5 0 0 0-.62-.38z"/></svg>
+      </a>
+    </div>
+    <p class="footer-copy">© 2026 Arfa Munam. Designed, developed, and engineered with passion for exceptional digital experiences.</p>
+  </div>
+</footer>
+
+<script src="resume-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
